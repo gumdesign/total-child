@@ -1,0 +1,462 @@
+/*
+Theme Name: UpdateThemeName
+Theme URI: http://gumdesign.com
+Description: Total child theme.
+Author: Gum Design
+Author URI: http://gumdesign.com
+Template: Total
+Version: 1.0
+*/
+
+
+
+/* COLORS
+* green #43d5cb
+* blue dark #435ba1
+* neutral #f4f3ea
+*/
+
+
+:root {
+  --primary-color: #435ba1;
+  --secondary-color: #435ba1;
+  --neutral-bg-color-light: #435ba1;
+  --button-bg-color:;
+  --button-color:;
+}
+
+/* 
+* Typography vertical rythmn
+* http://type-scale.com/?size=16&scale=1.333  
+*/
+
+
+html {font-size: 1em;}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  line-height: 1.45;
+  color: #222;
+  font-size: 18px;
+}
+
+h1, h1.vcex-heading,
+h2, h2.vcex-heading, 
+h3, h3.vcex-heading,
+h4, h4.vcex-heading {
+  margin: 2rem 0 1rem;
+  font-weight: inherit;
+  line-height: 1.2;
+  font-family: inherit;
+	font-weight: bold;
+	font-style: normal;
+	color: #254c76;
+}
+
+h1, h1.vcex-heading {
+  margin-top: 0;
+  font-size: 3.157em;
+}
+
+h2, h2.vcex-heading {font-size: 2.369em;}
+
+h3, h3.vcex-heading {font-size: 1.777em;}
+
+h4, h4.vcex-heading {font-size: 1.333em;}
+
+.heading-typography { line-height: 1.45 }
+
+.vcex-module.vcex-heading.vcex-heading-plain {
+	 margin: 1.414em 0 0.5em;
+	
+}
+
+.single-page-content h2:first-child {
+/*	margin-top: 0;*/
+}
+
+
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { color: #222 }
+h1 a:hover, h2 a:hover, a:hover h2, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover { text-decoration: none; color: #222; }
+
+
+p {margin-bottom: 1em;}
+
+p.lead { font-size: 1.33em; line-height: 1.45; font-weight: 300; color: #222; }
+
+
+small, .font_small {font-size: 0.75em;}
+
+em { font-style: italic }
+strong { font-weight: bold; font-weight: 600; }
+small { font-size: 80% }
+hr { border: solid #e4e4e4; border-width: 1px 0 0; clear: both; margin: 40px 0; height: 0; }
+
+/* font smoothing */
+body.smooth-fonts { -webkit-font-smoothing: antialiased; }
+
+/* links */
+a { color: #0081cc; text-decoration: none; outline: none; }
+a:hover { text-decoration: underline }
+
+
+.wpex-accent-color, a.wpex-accent-color {
+	
+} 
+
+/* list > styles */
+ul.check-list { margin: 0 0 20px; list-style: none; }
+ul.check-list li { margin: 0 0 5px; display: table;}
+ul.check-list li:before { font-family: "FontAwesome"; content:"\f00c"; margin-right: 10px; opacity: 0.8; display: table-cell;padding-right: 10px;}
+
+
+
+.fluid-height {
+	min-height: calc(100vw * (2/18));
+}
+
+#hero {
+	position: relative;
+}
+
+.tagline {
+	background: #222;
+	padding: 3rem;
+	margin-top: -50px;
+	z-index: 100;
+	border: 4px solid #fff;
+	border-color: #fff !important;
+}
+
+.tagline h1 {
+	font-weight: bold;
+	display: inline-block;
+	color: #fff;
+	padding-bottom: 1rem;
+	font-size: 1.33em;
+	border-bottom: 3px solid #fff;
+}
+
+.tagline p {
+	font-weight: 300;
+	font-size: 1.77em;
+	/*max-width: 30em;
+	margin: 0 auto;*/
+	
+}
+
+#site-logo a.site-logo-text {
+	color: #222;
+}
+
+/*.tagline h2 {
+	margin-top: 0;
+}*/
+
+
+/* @group Top Bar */
+
+#top-bar {
+/*	font-size: .8em;*/
+}
+
+#top-bar-wrap {
+	background-color:var(neutral-bg-color-light);
+	border: none;
+	text-align: right;
+	font-size: 1.33em;
+}
+
+/* @end */
+
+/* @group Callout */
+
+.callout {
+	padding: 0 2rem 2rem;
+	color: #fff;
+	background: #222;
+}
+
+.callout  li {
+	font-size: 1.1em;
+	margin-bottom: .4em;
+}
+
+.callout h3 {
+	margin: -2rem -2rem 0;
+	background: #43d5cb;
+	padding: 1rem 2rem;
+	margin-bottom: 1rem;
+}
+
+.callout * {
+	color: #fff;
+}
+
+.callout :first-child {
+	margin-top: 0 !important;
+}
+
+/* @end */
+
+/* @group Page header */
+
+.page-header {
+	padding: 3rem 0;
+	background: background-color:var(neutral-bg-color-light);
+	border: 0;
+}
+
+	.page-header-title {
+		text-align: center;
+		font-size: 3.157em;
+		font-size: 2.369em;
+		text-transform: uppercase;
+		letter-spacing: .1em;
+		color:#222 ;
+	}
+
+/* @end */
+
+/* @group Navigation */
+
+.navbar-style-one .dropdown-menu {
+	font-weight: 500;
+	text-transform: uppercase;
+	letter-spacing: .1em;
+}
+
+.navbar-style-one .dropdown-menu>li.menu-item>a {
+    display: block;
+    height: 50px;
+    line-height: 50px;
+    padding: 0 4px;
+    color: #222;
+}
+/* @end */
+
+/* @group VC Modules */
+
+.wpb_single_image .vc_figure {
+	margin-bottom: 2rem;
+}
+
+.theme-button, .color-button, input[type="submit"], button, .button, .added_to_cart {
+	background-color: #000;
+	margin-top: 2rem;
+}
+
+.wpb_single_image_caption {
+    position: absolute;
+    z-index: 2;
+    bottom: 0px !important;
+    left: 0;
+    right: 0;
+    color: #fff;
+    text-align: center;
+    font-weight: 300;
+    font-size: 1.77em;
+    padding: 4px 10px;
+    background: #222 !important;
+    opacity: .9 !important;
+}
+
+/* @end */
+
+/* @group Footer */
+
+#footer {
+	background: #222;
+	color: #fff;
+}
+
+/*#footer table,  #footer table td{
+	border: 0;
+}*/
+
+.site-footer table th, .site-footer table td {
+	border-color:#7289d2 ;
+}
+
+
+#footer a {
+	color: #fff;
+	
+}
+
+#footer-bottom {
+	background: #222;
+	color: #eff2fa;
+}
+
+#footer-bottom a {
+	color: #eff2fa;
+}
+
+#footer-callout-wrap {
+    background-color:var(neutral-bg-color-light);
+    padding: 30px 0;
+    border-top: 0px solid #eee;
+    border-bottom: 0px solid #eee;
+}
+
+/* @end */
+
+
+
+/* @group styleguide */
+
+div.styleguide-section-header {
+    margin: 4rem 0 2rem;
+    padding-bottom: 1rem;
+	line-height: 1.15;
+    padding: .5rem 1rem;
+    background: #efefef;
+    color: #222;
+    border: 1px solid #d6ddf5;
+}
+
+.colorswatch { 
+    float:left;
+    width:120px; 
+    margin:1rem; 
+    display:inline-block;
+    border:0px solid #ccc;
+    text-align:center;
+}
+.color {
+    width:120px; 
+    height:120px; 
+}
+
+
+.brand-primary {
+	color: #222;
+}
+
+.brand-primary-dark {
+	color: #435ba1;
+}
+
+.brand-primary-light {
+	color: #82bddd;
+}
+
+.brand-secondary {
+	color: #43d5cb;
+}
+
+.bg-brand-neutral {background-color:var(neutral-bg-color-light)}
+
+.bg-brand-primary {
+ 	background:#222 ;	
+} 
+
+.bg-brand-secondary {
+ 	background: #435ba1;	
+} 
+
+.bg-brand-accent {
+ 	background: #43d5cb;	
+} 
+
+
+/* @end */
+
+
+
+/* @group blog */
+
+/* blog single: float featured image to left
+ * Note: Set media after header and meta in theme customizer
+	
+*/
+
+.single-blog-article #post-media {	
+		float: left;
+		margin: 0 20px 20px 0;
+}
+.single-blog-article #post-media img {width: auto !important;}
+	
+.single-blog-article h2:first-child, 
+.single-blog-article h3:first-child, 
+.single-blog-article h4:first-child { margin-top: 	0;}
+
+
+.blog-entry-media img {
+	 width: auto !important;
+	 margin: 0;
+}
+
+.blog-entry-readmore .theme-button {
+	margin-left: 0;
+}
+
+
+/* @end */
+
+
+/*------------------------------------------------------------------
+[# Greater than tablets]
+-------------------------------------------------------------------*/
+@media only screen and (min-width: 768px) {
+
+}
+
+
+
+/*------------------------------------------------------------------
+[# Tablet & Small Desktop Widths 768px - 1280px]
+-------------------------------------------------------------------*/
+@media only screen and (min-width: 768px) and (max-width: 1280px) {
+
+
+	
+}
+
+
+
+/*--------------------------------------------------------------
+- Tablet Portrait
+--------------------------------------------------------------*/
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+
+}
+
+/*--------------------------------------------------------------
+- Tablet Landscape
+--------------------------------------------------------------*/
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+
+   
+}
+
+
+
+/*--------------------------------------------------------------
+- All Devices under 960px
+--------------------------------------------------------------*/
+@media only screen and (max-width: 959px) {
+
+
+}
+
+
+/*--------------------------------------------------------------
+- Phone Portrait and Landscape
+--------------------------------------------------------------*/
+
+@media only screen and (max-width: 767px) {
+/* disable equal heights on mobile */
+ 	.wpex-vc-row-columns-match-height .wpex-vc-column-wrapper { height: auto !important; }
+}
+
+
+/*--------------------------------------------------------------
+- Between Phone and Mobile
+--------------------------------------------------------------*/
+@media only screen and (max-width: 500px) {
+
+   
+}

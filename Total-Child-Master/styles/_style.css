@@ -1,0 +1,193 @@
+/*
+Theme Name: Total Child
+Theme URI: http://gumdesign.com
+Description: Total child theme.
+Author: Gum Design
+Author URI: http://gumdesign.com
+Template: Total
+Version: 1.0
+*/
+
+
+
+/* 
+* Typography vertical rythmn
+* http://type-scale.com/?size=16&scale=1.333  
+*/
+
+
+html {font-size: 1em;}
+
+body {
+  background-color: white;
+  font-family: 'Merriweather Sans', sans-serif;
+  font-weight: 400;
+  line-height: 1.45;
+  color: #222;
+  font-size: 1em;
+}
+
+h1, h1.vcex-heading,
+h2, h2.vcex-heading, 
+h3, h3.vcex-heading,
+h4, h4.vcex-heading {
+  margin: 1.414em 0 0.5em;
+  font-weight: inherit;
+  line-height: 1.2;
+  font-family: 'Merriweather', serif;
+}
+
+h1, h1.vcex-heading {
+  margin-top: 0;
+  font-size: 3.157em;
+}
+
+h2, h2.vcex-heading {font-size: 2.369em;}
+
+h3, h3.vcex-heading {font-size: 1.777em;}
+
+h4, h4.vcex-heading {font-size: 1.333em;}
+
+.heading-typography { line-height: 1.45 }
+
+
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { color: #222 }
+h1 a:hover, h2 a:hover, a:hover h2, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover { text-decoration: none; color: #222; }
+
+
+p {margin-bottom: 1em;}
+
+p.lead { font-size: 1.15em; line-height: 1.45; color: #222; }
+
+
+small, .font_small {font-size: 0.75em;}
+
+em { font-style: italic }
+strong { font-weight: bold; font-weight: 600; }
+small { font-size: 80% }
+hr { border: solid #e4e4e4; border-width: 1px 0 0; clear: both; margin: 40px 0; height: 0; }
+
+/* font smoothing */
+body.smooth-fonts { -webkit-font-smoothing: antialiased; }
+
+/* links */
+a { color: #0081cc; text-decoration: none; outline: none; }
+a:hover { text-decoration: underline }
+
+/* list > styles */
+ul.check-list { margin: 0 0 20px; list-style: none; }
+ul.check-list li { margin: 0 0 5px; display: table;}
+ul.check-list li:before { font-family: "FontAwesome"; content:"\f00c"; margin-right: 10px; opacity: 0.8; display: table-cell;padding-right: 10px;}
+
+/* @group Page header */
+
+
+
+/* @end */
+
+/* @group Navigation */
+
+
+
+/* @end */
+
+/* @group Footer */
+
+
+
+/* @end */
+
+/* @group blog */
+
+/* blog single: float featured image to left
+ * Note: Set media after header and meta in theme customizer
+	
+*/
+
+.single-blog-article #post-media {	
+		float: left;
+		margin: 0 20px 20px 0;
+}
+.single-blog-article #post-media img {width: auto !important;}
+	
+.single-blog-article h2:first-child, 
+.single-blog-article h3:first-child, 
+.single-blog-article h4:first-child { margin-top: 	0;}
+
+
+.blog-entry-media img {
+	 width: auto !important;
+	 margin: 0;
+}
+
+.blog-entry-readmore .theme-button {
+	margin-left: 0;
+}
+
+
+/* @end */
+
+
+/*------------------------------------------------------------------
+[# Greater than tablets]
+-------------------------------------------------------------------*/
+@media only screen and (min-width: 768px) {
+
+}
+
+
+
+/*------------------------------------------------------------------
+[# Tablet & Small Desktop Widths 768px - 1280px]
+-------------------------------------------------------------------*/
+@media only screen and (min-width: 768px) and (max-width: 1280px) {
+
+
+	
+}
+
+
+
+/*--------------------------------------------------------------
+- Tablet Portrait
+--------------------------------------------------------------*/
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+
+}
+
+/*--------------------------------------------------------------
+- Tablet Landscape
+--------------------------------------------------------------*/
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+
+   
+}
+
+
+
+/*--------------------------------------------------------------
+- All Devices under 960px
+--------------------------------------------------------------*/
+@media only screen and (max-width: 959px) {
+
+
+}
+
+
+/*--------------------------------------------------------------
+- Phone Portrait and Landscape
+--------------------------------------------------------------*/
+
+@media only screen and (max-width: 767px) {
+/* disable equal heights on mobile */
+ 	.wpex-vc-row-columns-match-height .wpex-vc-column-wrapper { height: auto !important; }
+}
+
+
+/*--------------------------------------------------------------
+- Between Phone and Mobile
+--------------------------------------------------------------*/
+@media only screen and (max-width: 500px) {
+
+   
+}

@@ -181,6 +181,24 @@ function childtheme_remove_dashboard_widgets () {
 add_action('wp_dashboard_setup', 'childtheme_remove_dashboard_widgets');
 
 
+
+
+
+
+/**
+ * Adds field to override callout in page settings
+ * If a page ID is set in cutomizer this field will override the default callout ID
+ */
+
+add_filter( 'wpex_metabox_array', function( $array ) {
+    $array['callout']['settings']['callout_text']['title'] = 'Callout Page ID';
+    $array['callout']['settings']['callout_text']['type'] = 'text';
+    $array['callout']['settings']['callout_text']['description'] = 'Enter a page ID to override your default callout content set in customizer.';
+    return $array;
+}, 40 );
+
+
+
 /**
  * optional below
  */

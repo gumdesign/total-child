@@ -394,6 +394,27 @@ div.styleguide-section-header {
 }
 
 
+
+/* @end */
+
+/* @group Helpers */
+
+/* align-flex-between : space elements even inside a container */
+
+.align-flex-between .wpb_wrapper {
+	height:100%;
+	display:flex;
+	flex-direction: column;
+	
+	-webkit-box-pack: justify;
+  	-webkit-justify-content: space-between;
+  	-ms-flex-pack: justify;
+  	justify-content: space-between;
+}
+.align-flex-between .wpb_wrapper .theme-button {
+	margin-top:1rem;
+}
+
 /* @end */
 
 

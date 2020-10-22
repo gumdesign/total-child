@@ -3,7 +3,9 @@
  * Total Child Master theme functions
  *
  * always load default custom functions in this file
- * include shortcode extensions as needed
+ * include shortcode & extensions as needed
+ * 
+ * 1.0
  */
  
 
@@ -25,18 +27,7 @@ function childtheme_styles() {
     // List of dependencies for your child theme style.css
     $deps = array( WPEX_THEME_STYLE_HANDLE );
 
-    // Add Total WPBakery styles to dependency if enabled
-    if ( wpex_get_mod( 'extend_visual_composer', true )  ) {
-    $deps[] = 'wpex-visual-composer';
-  }
-  
-    //  if we are using events add to dependency
-    // this breaks with the new tribe version
-    /*
-    if ( wpex_get_mod( 'extend_tribe_events', true )  ) {
-        $deps[] = 'wpex-tribe-events'; 
-    }
-    */
+   
     // Re-add child CSS with parent as dependency & add theme version
     wp_enqueue_style( 'child-theme', get_stylesheet_directory_uri() . '/style.css', $deps, wp_get_theme()->get('Version') );
 
@@ -79,24 +70,13 @@ add_filter('upload_mimes', 'cc_mime_types');
  */
 /**/
 function load_google_fonts() {
-wp_register_style('googleWebFonts', '//fonts.googleapis.com/css?family=Open+Sans:400,400i,700');
-wp_enqueue_style('googleWebFonts');
+    wp_register_style('googleWebFonts', '//fonts.googleapis.com/css?family=Open+Sans:400,400i,700');
+    wp_enqueue_style('googleWebFonts');
 }
 add_action('wp_print_styles', 'load_google_fonts'); 
 
 
-/*
-* Remove news & events dashboard widget
-*
-*/
 
-// Create the function to use in the action hook
-function remove_news_dashboard_widget() {
-    remove_meta_box( 'dashboard_primary', 'dashboard', 'side' );      
-} 
-
-// Hook into the 'wp_dashboard_setup' action to register our function
-add_action('wp_dashboard_setup', 'remove_news_dashboard_widget' );
 
 
 /**
@@ -159,6 +139,19 @@ function childtheme_image_sizes( $sizes ) {
  add_filter( 'wpex_image_sizes', 'childtheme_image_sizes', 9999 );
 
 
+
+/*
+* Remove news & events dashboard widget
+*
+*/
+
+// Create the function to use in the action hook
+function remove_news_dashboard_widget() {
+    remove_meta_box( 'dashboard_primary', 'dashboard', 'side' );      
+} 
+// Hook into the 'wp_dashboard_setup' action to register our function
+add_action('wp_dashboard_setup', 'remove_news_dashboard_widget' );
+
 /**
  * remove news dashboard widget
  */
@@ -183,10 +176,9 @@ add_action('wp_dashboard_setup', 'childtheme_remove_dashboard_widgets');
 
 
 
-
-
 /**
- * Adds field to override callout in page settings
+ * Callout Override on page settings
+ * Adds field to override default callout in page settings
  * If a page ID is set in cutomizer this field will override the default callout ID
  */
 
@@ -197,40 +189,4 @@ add_filter( 'wpex_metabox_array', function( $array ) {
     return $array;
 }, 40 );
 
-
-
-/**
- * optional below
- */
- 
- 
-
- 
- /**
- * load only theme fonts in VC modules
- */
- 
-/* 
- function myprefix_google_fonts( $array ) {
-    return array( 'Open Sans', 'Roboto', 'Source Sans Pro' );
-}
-add_filter( 'wpex_google_fonts_array', 'myprefix_google_fonts' );
-*/ 
-
-
-
-
-
-
-/**
- * Add TypeKit Fonts To  Child Theme
- * 
- */
- 
-
-/*-----------------------------------------------------------------------------------*/
-/*	- SAMPLE SNIPPETS
-/*	- Below are some useful snippets you can use to tweak the theme.
-/*	- See the Total FAQ for more useful snippets or ask me :)
-/*-----------------------------------------------------------------------------------*/
 

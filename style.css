@@ -411,9 +411,15 @@ div.styleguide-section-header {
   	-ms-flex-pack: justify;
   	justify-content: space-between;
 }
+
 .align-flex-between .wpb_wrapper .theme-button {
 	margin-top:1rem;
 }
+
+.vc-row-toggle {
+	display: none;
+}
+
 
 /* @end */
 

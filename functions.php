@@ -9,6 +9,16 @@
  */
  
 
+
+/**
+ * add shortcodes if needed
+ */
+
+include_once('shortcodes/page_popup.php');
+// include_once('shortcodes/my_account_menu.php')
+
+
+
 /*
 * Load Child Theme style.css After Parent Theme style.css AND VC styles
 * https://themeforest.net/item/total-responsive-multipurpose-wordpress-theme/6339019/comments?page=873&filter=all#comment_22874228

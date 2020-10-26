@@ -88,20 +88,19 @@ add_action('wp_print_styles', 'load_google_fonts');
 
 
 
-
 /**
  * Add more styles to the Formats->Total Styles dropdown
 */
  
- function childtheme_format_items( $items ) {
+function childtheme_format_items( $items ) {
     $items[] = array(
         'title'        => __( 'Lead Text', 'wpex' ),
         'selector'    => 'p',
-        'classes'    => 'lead',
+        'classes'    => 'lead-text lead',
     );
     $items[] = array(
         'title'        => __( 'Subheader', 'wpex' ),
-        'selector'    => 'h1,h2,h3,h4,h5',
+        'selector'    => 'h1,h2,h3,h4,h5,p,span',
         'classes'    => 'subheader',
     );
     $items[] = array(
@@ -118,6 +117,21 @@ add_action('wp_print_styles', 'load_google_fonts');
         'title'        => __( 'Large Text', 'wpex' ),
         'selector'    => 'p',
         'classes'    => 'text-large',
+    );
+    $items[] = array(
+        'title'        => __( 'Heading Size 2', 'wpex' ),
+        'selector'    => 'p, div, span',
+        'classes'    => 'theme-heading size-h2',
+    );
+    $items[] = array(
+        'title'        => __( 'Heading Size 3', 'wpex' ),
+        'selector'    => 'p, div, span',
+        'classes'    => 'theme-heading size-h3',
+    );
+    $items[] = array(
+        'title'        => __( 'Heading Size 4', 'wpex' ),
+        'selector'    => 'p, div, span',
+        'classes'    => 'theme-heading size-h4',
     );
     return $items;
 }

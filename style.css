@@ -239,12 +239,7 @@ ul.check-list li:before { font-family: "FontAwesome"; content:"\f00c"; margin-ri
 /* @group VC Modules */
 
 .wpb_single_image .vc_figure {
-	margin-bottom: 2rem;
-}
-
-.theme-button, .color-button, input[type="submit"], button, .button, .added_to_cart {
-	background-color: #000;
-	margin-top: 2rem;
+	/*margin-bottom: 2rem;*/
 }
 
 .wpb_single_image_caption {
@@ -261,6 +256,35 @@ ul.check-list li:before { font-family: "FontAwesome"; content:"\f00c"; margin-ri
     background: #222 !important;
     opacity: .9 !important;
 }
+
+
+/* @group Theme Button */
+
+.theme-button, .color-button, input[type="submit"], button, .button, .added_to_cart {
+	background-color: #000;
+	margin-top: 2rem;
+}
+
+
+/* @end */
+
+/* @group Toggle */
+
+.vc_toggle_default .vc_toggle_title, .vc_toggle_default.vc_toggle_active .vc_toggle_title {
+    padding: 10px 12px 10px 32px !important;
+    border: none !important;
+    background: none !important;
+}
+.vc_toggle_default .vc_toggle_title h4 {
+    font-size: 1.2em !important;
+    color: #018897 !important;
+    background-color: none !important;
+}
+.vc_toggle_default .vc_toggle_content {
+	margin-left: 30px !important;
+}
+
+/* @end */
 
 /* @end */
 

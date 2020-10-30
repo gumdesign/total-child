@@ -23,6 +23,8 @@ include_once('shortcodes/page_popup.php');
 * Load Child Theme style.css After Parent Theme style.css AND VC styles
 * https://themeforest.net/item/total-responsive-multipurpose-wordpress-theme/6339019/comments?page=873&filter=all#comment_22874228
 * https://wpexplorer-themes.com/total/snippets/child-css-after-parent-css/
+
+* updated 10-2020 https://gist.github.com/wpexplorer/96c330a0bd58233672bc06988d3fa166
 */
 
 function childtheme_styles() {
@@ -34,12 +36,19 @@ function childtheme_styles() {
     // Add the parent style.css with the main style handle
     wp_enqueue_style( WPEX_THEME_STYLE_HANDLE, get_template_directory_uri() . '/style.css', array(), WPEX_THEME_VERSION );
 
-    // List of dependencies for your child theme style.css
-    $deps = array( WPEX_THEME_STYLE_HANDLE );
+    
+    // Add Total WPBakery styles to dependency if loaded
+   if ( defined( 'WPEX_VC_ACTIVE' ) && WPEX_VC_ACTIVE && function_exists( 'wpex_has_vc_mods' ) && wpex_has_vc_mods() ) {
+        $deps[] = 'wpex-wpbakery';
+    }
 
-   
     // Re-add child CSS with parent as dependency & add theme version
-    wp_enqueue_style( 'child-theme', get_stylesheet_directory_uri() . '/style.css', $deps, wp_get_theme()->get('Version') );
+    wp_enqueue_style(
+        'child-theme',
+        get_stylesheet_directory_uri() . '/style.css',
+        $deps,
+        wp_get_theme()->get( 'Version' )
+    );
 
 }
 add_action( 'wp_enqueue_scripts', 'childtheme_styles' );

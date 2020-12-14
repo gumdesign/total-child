@@ -210,10 +210,7 @@ ul.check-list li:before { font-family: "FontAwesome"; content:"\f00c"; margin-ri
 
 	.page-header-title {
 		text-align: center;
-		font-size: 3.157em;
 		font-size: 2.369em;
-		text-transform: uppercase;
-		letter-spacing: .1em;
 		color:#222 ;
 	}
 
@@ -234,6 +231,15 @@ ul.check-list li:before { font-family: "FontAwesome"; content:"\f00c"; margin-ri
     padding: 0 4px;
     color: #222;
 }
+
+
+#site-navigation .dropdown-menu ul.sub-menu li.menu-item a {
+    color: #222;
+    font-size: 0.923em;
+    border-bottom: 1px solid #eee;
+}
+
+
 /* @end */
 
 /* @group VC Modules */
@@ -290,7 +296,7 @@ ul.check-list li:before { font-family: "FontAwesome"; content:"\f00c"; margin-ri
 
 /* @group Footer */
 
-#footer {
+#footer, #footer-builder {
 	background: #222;
 	color: #fff;
 }

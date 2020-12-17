@@ -223,3 +223,17 @@ add_filter( 'wpex_metabox_array', function( $array ) {
 }, 40 );
 
 
+/**
+ * Sets default values for button shortcode
+ */
+add_filter( 'wpex_shortcodes_tinymce_json', function( $data ) {
+
+	// Alter the default insert code for the button shortcode
+	$data['shortcodes']['vcex_button']['insert'] = '[vcex_button url="/" title="" ]Button Text[/vcex_button]';
+
+	// Return data
+	return $data;
+
+}, 40 );
+
+

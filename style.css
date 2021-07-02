@@ -167,7 +167,7 @@ ul.check-list li {
   display: table;
 }
 ul.check-list li:before {
-  font-family: "FontAwesome";
+  font-family: "ticons";
   content: "\f00c";
   margin-right: 10px;
   opacity: 0.8;

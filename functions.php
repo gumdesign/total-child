@@ -19,39 +19,15 @@ include_once('shortcodes/page_popup.php');
 
 
 
-/*
-* Load Child Theme style.css After Parent Theme style.css AND VC styles
-* https://themeforest.net/item/total-responsive-multipurpose-wordpress-theme/6339019/comments?page=873&filter=all#comment_22874228
-* https://wpexplorer-themes.com/total/snippets/child-css-after-parent-css/
+/**
+ * add parent styles
+ * this is the new recommended way to import parents styles
+*/  
 
-* updated 10-2020 https://gist.github.com/wpexplorer/96c330a0bd58233672bc06988d3fa166
-*/
-
-function childtheme_styles() {
-
-    // First de-register the main stylesheet (which is now your child theme style.css)
-    wp_dequeue_style( WPEX_THEME_STYLE_HANDLE );
-    wp_deregister_style( WPEX_THEME_STYLE_HANDLE );
-
-    // Add the parent style.css with the main style handle
-    wp_enqueue_style( WPEX_THEME_STYLE_HANDLE, get_template_directory_uri() . '/style.css', array(), WPEX_THEME_VERSION );
-
-    
-    // Add Total WPBakery styles to dependency if loaded
-   if ( defined( 'WPEX_VC_ACTIVE' ) && WPEX_VC_ACTIVE && function_exists( 'wpex_has_vc_mods' ) && wpex_has_vc_mods() ) {
-        $deps[] = 'wpex-wpbakery';
-    }
-
-    // Re-add child CSS with parent as dependency & add theme version
-    wp_enqueue_style(
-        'child-theme',
-        get_stylesheet_directory_uri() . '/style.css',
-        $deps,
-        wp_get_theme()->get( 'Version' )
-    );
-
+function enqueue_parent_styles() {
+	wp_enqueue_style( 'parent-style', get_template_directory_uri().'/style.css' );
 }
-add_action( 'wp_enqueue_scripts', 'childtheme_styles' );
+add_action( 'wp_enqueue_scripts', 'enqueue_parent_styles' );
 
 
 
@@ -83,21 +59,9 @@ add_action('wp_enqueue_scripts', 'childtheme_script_manager');
 add_filter('upload_mimes', 'cc_mime_types');
 
 
-/**
- * Add Google Fonts To  Child Theme
- * 
- */
-/**/
-function load_google_fonts() {
-    wp_register_style('googleWebFonts', '//fonts.googleapis.com/css?family=Open+Sans:400,400i,700');
-    wp_enqueue_style('googleWebFonts');
-}
-add_action('wp_print_styles', 'load_google_fonts'); 
-
-
-
 
 /**
+ * Legacy compatibility
  * Add more styles to the Formats->Total Styles dropdown
 */
  
@@ -106,41 +70,6 @@ function childtheme_format_items( $items ) {
         'title'        => __( 'Lead Text', 'wpex' ),
         'selector'    => 'p',
         'classes'    => 'lead-text lead',
-    );
-    $items[] = array(
-        'title'        => __( 'Subheader', 'wpex' ),
-        'selector'    => 'h1,h2,h3,h4,h5,p,span',
-        'classes'    => 'subheader',
-    );
-    $items[] = array(
-        'title'        => __( 'Definition Title', 'wpex' ),
-        'selector'    => 'p',
-        'classes'    => 'dt',
-    );
-    $items[] = array(
-        'title'        => __( 'Definition Description', 'wpex' ),
-        'selector'    => 'p',
-        'classes'    => 'dd',
-    );
-    $items[] = array(
-        'title'        => __( 'Large Text', 'wpex' ),
-        'selector'    => 'p',
-        'classes'    => 'text-large',
-    );
-    $items[] = array(
-        'title'        => __( 'Heading Size 2', 'wpex' ),
-        'selector'    => 'p, div, span',
-        'classes'    => 'theme-heading size-h2',
-    );
-    $items[] = array(
-        'title'        => __( 'Heading Size 3', 'wpex' ),
-        'selector'    => 'p, div, span',
-        'classes'    => 'theme-heading size-h3',
-    );
-    $items[] = array(
-        'title'        => __( 'Heading Size 4', 'wpex' ),
-        'selector'    => 'p, div, span',
-        'classes'    => 'theme-heading size-h4',
     );
     return $items;
 }
